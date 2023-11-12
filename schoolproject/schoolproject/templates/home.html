@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <title>Home Page</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if user.is_authenticated %}
+            <li>hey--->{{user.username}}</li>
+            <li><a href="logout"></a></li>
+            {% else %}
+            <li><a href="login">Login</a></li>
+            <li><a href="register">Register</a></li>
+            {% endif %}
+            <li class="dropdown">
+                <button class="dropbtn">Department</button>
+                <div class="dropdown-content">
+                    <a href="https://en.wikipedia.org/wiki/Computer_science" target="_blank">Computer Science</a>
+                    <a href="https://en.wikipedia.org/wiki/Commerce" target="_blank">Commerce</a>
+                    <a href="https://en.wikipedia.org/wiki/Biology_science" target="_blank">Biology Science</a>
+                    <a href="https://en.wikipedia.org/wiki/Humanities" target="_blank">Humanities</a>
+                    <a href="https://en.wikipedia.org/wiki/Art" target="_blank">Art</a>
+                    <!-- Add more departments as needed -->
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+<div class="content" style="width:18rem;height:18rem;">
+    <img src="https://thumbs.dreamstime.com/b/group-school-kids-teacher-classroom-education-elementary-learning-people-concept-sitting-listening-to-57820297.jpg"  style="width:68rem;height:28rem;" >
+
+</div>
+
+</body>
+</html>

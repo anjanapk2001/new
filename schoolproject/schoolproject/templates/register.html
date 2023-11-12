@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+ <div class="register-container">
+        <h2>Register</h2>
+     <form action="register" method="post">
+         {% csrf_token %}
+         {{form.as_p}}
+
+
+<!--            <label for="username">Username:</label>-->
+<!--            <input type="text" id="username" name="username" required>-->
+
+<!--            <label for="password">Password:</label>-->
+<!--            <input type="password" id="password" name="password" required>-->
+
+<!--            <label for="confirmPassword">Confirm Password:</label>-->
+<!--            <input type="password" id="confirmPassword" name="confirmPassword" required>-->
+
+            <button type="submit"><a href="/login/">Register</a></button>
+         {% for msg in messages%}
+<h2>{{msg}}</h2>
+{% endfor %}
+        </form>
+
+
+    </div>
+</body>
+</html>
